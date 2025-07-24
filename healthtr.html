@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellnest - Daily Water & Sleep Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <!-- header starts -->
+        <div class="header">
+            <h2>💧WellNest</h2>
+            <p>Your Daily Water & Sleep Companion</p>
+        </div>
+        <!-- header ends -->
+
+        <!-- main starts -->
+         <main>
+            <section class="date-nav">
+                <div class="date-nav">
+                <button class="date-btn" onclick="changeDate(-1)"> < </button>
+                <div class="date-display" id="currentDate">Thursday, July, 2025</div>
+                <button class="date-btn" onclick="changeDate(1)"> > </button>
+            </div>
+            </section>
+
+            <section class="stat-tabs">
+                <button class="stat-tab-btn active" onclick="setView('daily')">Daily</button>
+                <button class="stat-tab-btn active" onclick="setView('weekly')">Weekly</button>
+                <button class="stat-tab-btn active" onclick="setView('monthy')">Monthy</button>
+            </section>
+
+            <section class="goal-settinngs">
+                <h3>Set  Your Goals</h3>
+                <div class="goal-input-groups">
+                    <label for="waterGoalInput">Water Goal (glasses/day):</label>
+                    <input type="number" id="waterGoalInput" min="0" value="8">
+                    <button type="button" onclick="setWaterGoal()">Update</button>
+                </div>
+                 <div class="goal-input-group">
+                <label for="sleepGoalInput">Sleep Goal (hours/night):</label>
+                <input type="number" id="sleepGoalInput" min="0" value="7">
+                <button type="button" onclick="setSleepGoal()">Update</button>
+            </div>
+            </section>
+
+            <section class="main-content">
+                <div class="card water-card">
+                    <h2>
+                        <span class="card-icom">💧</span>
+                        Water-Intake
+                    </h2>
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring--circle"></circle>
+                            <circle class="progress-ring--progress" id="waterProgress" style="stroke-dasharray: 0; stroke-dashoffset: 0;"></circle>
+                        </svg>
+                    <div class="progress-text">
+                        <span class="progress-number" id="waterCount">0</span>
+                        <span>glasses</span>
+                    </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="addWater()">Add Glass</button>
+                        <button class="btn btn-secondary" onclick="removeWater()">Remove</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="waterInput" placeholder="0" min="0">
+                        <button class="btn btn-primary" onclick="setWater()">Set</button>
+                    </div>
+                    <div id="waterAcheivement" class="acheivement hidden">
+                        🎉🎉 Great job! You've raeched yout daily water goal!
+                    </div>
+                </div>
+                <div class="card sleep-card">
+                    <h2>
+                        <span class="card-icom">💤</span>
+                        Sleep Hours
+                    </h2>
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring--circle"></circle>
+                            <circle class="progress-ring--progress" id="sleepProgress" style="stroke-dasharray: 0; stroke-dashoffset: 0;"></circle>
+                        </svg>
+                    <div class="progress-text">
+                        <span class="progress-number" id="sleepCount">0</span>
+                        <span>Hours</span>
+                    </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="addHours()">Add Hours</button>
+                        <button class="btn btn-secondary" onclick="removeHours()">Remove</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="hourInput" placeholder="0" min="0">
+                        <button class="btn btn-primary" onclick="setHour()">Set</button>
+                    </div>
+                    <div id="sleepAcheivement" class="acheivement hidden">
+                        🎉🎉 Great job! You've raeched yout daily water goal!
+                    </div>
+                </div>
+            </section>            
+         </main>
+         <!-- main ends -->
+
+         <!-- footer starts -->
+          <footer>
+            <div class="stats-section">
+                <h2>📊 Your Progress</h2>
+                <div class="stat-item">
+                    <div class="stat-number" id="avgWater">0.0</div>
+                    <div class="stat-level">Avg Water (7days)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="avgSleep">0.0</div>
+                    <div class="stat-level">Avg Sleep (7days)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="streakDays">0</div>
+                    <div class="stat-level">Current Streak</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalDays">0</div>
+                    <div class="stat-level">Days Tracked</div>
+                </div>
+            </div>
+          </footer>
+          <!-- footer ends -->
+    </div>
+</body>
+</html>
