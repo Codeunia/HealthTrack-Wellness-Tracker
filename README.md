@@ -1,6 +1,6 @@
-# 💧 HealthTrack – Daily Water & Sleep Tracker
+# 💧 WellNest - Daily Water & Sleep Tracker
 
-HealthTrack is a beginner-friendly web application designed to help users monitor their daily water intake and sleep duration. Built using **HTML**, **CSS**, and **JavaScript**, it focuses on user interaction, data visualization, and local storage.
+WellNest is a beginner-friendly web application designed to help users monitor their daily water intake and sleep duration. Built using **HTML**, **CSS**, and **JavaScript**, it focuses on user interaction, data visualization, and local storage.
 
 ---
 
@@ -12,6 +12,8 @@ HealthTrack is a beginner-friendly web application designed to help users monito
 - 📅 Option to track for multiple days
 - 💾 Data stored locally using `localStorage`
 - 📱 Responsive and mobile-friendly layout
+- 📈 Weekly/Monthly Statistics
+- 🎯 Goal Setting
 
 ---
 
@@ -25,4 +27,4 @@ HealthTrack is a beginner-friendly web application designed to help users monito
 
 ## 👨‍💻 Contributor
 
-- [Aish2284](https://github.com/Aish2284)
+- [Aish2208](https://github.com/Aish2208)
