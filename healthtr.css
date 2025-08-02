@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+.body{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    background-color: #667eea;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+    animation: fadeInDown 1s ease-out;
+}
+.header h2{
+    font-size: 2.5rem;
+    color: #444;
+    font-family: monospace;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.header p{
+    font-size: 1.2rem;
+    color: #555;
+    font-family: monospace;
+    margin-bottom: 40px;
+}
+.date-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 50px;
+}
+.date-btn{
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 16px 16px rgba(0,0,0,0.3);
+}
+.date-btn:hover{
+    background: white;
+    transform: scale(1.3);
+}
+.date-display{
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px;
+    color: #46455d;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow:0 5px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    min-width: 200px;
+}
+.stat-tabs{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px;
+    color: #46455d;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow:0 5px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    min-width: 200px;
+    margin-bottom: 80px;   
+}
+.stat-tab-btn{
+    width: 70px;
+    height: 30px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.stat-tab-btn:hover{
+    background-color: beige;
+    transform: scale(1.1);
+}
+.goal-settinngs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    gap: 5px;
+    margin-bottom: 50px;
+}
+.goal-settinngs h3{
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+.goal-input-groups{
+    font-size: 1.1rem;
+    color: #444;
+}
+.btn-goal{
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    background: #e9e6f1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+.btn-goal:hover{
+    background: beige;
+    transform: scale(1.05);
+}
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+.card{
+    background: rgba(255,255,255,0.8);
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+.card h2{
+    font-size: 1.5rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+.card-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.water-card .card-icon {
+    color: #3182ce;
+}
+
+.sleep-card .card-icon {
+    color: #805ad5;
+}
+.progress-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+.progress-ring{
+    transform: rotate(90deg);
+}
+.progress-ring--circle{
+    stroke: #e2e8f0;
+    stroke-width: 8;
+    fill: transparent;
+    r: 90;
+    cx: 100;
+    cy: 100;
+}
+.progress-ring--progress {
+    stroke-width: 8;
+    fill: transparent;
+    r: 90;
+    cx: 100;
+    cy: 100;
+    stroke-dasharray: 565.48;
+    stroke-dashoffset: 565.48;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+.water-card .progress-ring--progress {
+    stroke: #3182ce;
+}
+
+.sleep-card .progress-ring--progress {
+    stroke: #805ad5;
+}
+.progress-text{
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+.progress-number {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.controls{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+.btn{
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.btn-primary{
+    background: linear-gradient(50deg, #3182ce, #4299e1);
+    color: white;
+}
+.btn-secondary{
+    background: linear-gradient(50deg, #805ad5, #764ba2);
+}
+.btn-ter{
+    background: linear-gradient(50deg, #e53e3e, #f56565);
+    color: white;
+}
+.input-group{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+.input-group input{
+    font-size: 1rem;
+    border: 2px solid #e2e5ea;
+    border-radius: 15px;
+    width: 80px;
+    text-align: center;
+    padding: 10px 15px;
+    transition: border-color 0.3s ease;
+}
+.input-group input:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+.achievement {
+    background: linear-gradient(45deg, #48bb78, #68d391);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+.hidden {
+    display: none;
+}
+.stats-section{ 
+    background: rgba(255,255,255,0.8);
+    padding: 30px;
+    margin-top: 30px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.3s ease-in;
+}
+.stats-section h2{
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.stats-grid{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+.stat-item:hover {
+    transform: scale(1.05);
+}
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+.stat-level {
+    font-size: 1rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .progress-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .progress-ring__circle,
+    .progress-ring__progress {
+        r: 65;
+        cx: 75;
+        cy: 75;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+    }
+
+    .progress-number {
+        font-size: 1.5rem;
+    }
+
+    .date-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 12px; 
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem; 
+        text-align: center; 
+    }
+
+    .card {
+        padding: 12px; 
+        font-size: 0.95rem; 
+    }
+
+    .progress-container {
+        width: 100px; 
+        height: 100px;
+    }
+
+    .progress-ring__circle,
+    .progress-ring__progress {
+        r: 40;
+        cx: 50;
+        cy: 50;
+    }
+
+    .progress-text {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .progress-number {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .date-nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 0; 
+    }
+}
