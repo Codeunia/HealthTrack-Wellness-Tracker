@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellnest - Daily Water & Sleep Tracker</title>
+    <link rel="stylesheet" href="healthtr.css">
 </head>
 <body>
     <div class="container">
@@ -35,12 +36,12 @@
                 <div class="goal-input-groups">
                     <label for="waterGoalInput">Water Goal (glasses/day):</label>
                     <input type="number" id="waterGoalInput" min="0" value="8">
-                    <button type="button" onclick="setWaterGoal()">Update</button>
+                    <button class="btn-goal" type="button" onclick="setWaterGoal()">Update</button>
                 </div>
-                 <div class="goal-input-group">
+                 <div class="goal-input-groups">
                 <label for="sleepGoalInput">Sleep Goal (hours/night):</label>
                 <input type="number" id="sleepGoalInput" min="0" value="7">
-                <button type="button" onclick="setSleepGoal()">Update</button>
+                <button class="btn-goal" type="button" onclick="setSleepGoal()">Update</button>
             </div>
             </section>
 
@@ -62,7 +63,7 @@
                     </div>
                     <div class="controls">
                         <button class="btn btn-primary" onclick="addWater()">Add Glass</button>
-                        <button class="btn btn-secondary" onclick="removeWater()">Remove</button>
+                        <button class="btn btn-ter" onclick="removeWater()">Remove</button>
                     </div>
                     <div class="input-group">
                         <input type="number" id="waterInput" placeholder="0" min="0">
@@ -88,8 +89,8 @@
                     </div>
                     </div>
                     <div class="controls">
-                        <button class="btn btn-primary" onclick="addHours()">Add Hours</button>
-                        <button class="btn btn-secondary" onclick="removeHours()">Remove</button>
+                        <button class="btn btn-secondary" onclick="addHours()">Add Hours</button>
+                        <button class="btn btn-ter" onclick="removeHours()">Remove</button>
                     </div>
                     <div class="input-group">
                         <input type="number" id="hourInput" placeholder="0" min="0">
@@ -107,7 +108,8 @@
           <footer>
             <div class="stats-section">
                 <h2>📊 Your Progress</h2>
-                <div class="stat-item">
+                <div class="stats-grid">
+                     <div class="stat-item">
                     <div class="stat-number" id="avgWater">0.0</div>
                     <div class="stat-level">Avg Water (7days)</div>
                 </div>
@@ -122,6 +124,7 @@
                 <div class="stat-item">
                     <div class="stat-number" id="totalDays">0</div>
                     <div class="stat-level">Days Tracked</div>
+                </div>
                 </div>
             </div>
           </footer>
