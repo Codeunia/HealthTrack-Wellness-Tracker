@@ -70,35 +70,6 @@
     text-align: center;
     min-width: 200px;
 }
-.stat-tabs{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background: rgba(255,255,255,0.5);
-    border-radius: 30px;
-    color: #46455d;
-    padding: 10px 10px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    box-shadow:0 5px 10px rgba(0,0,0,0.3);
-    text-align: center;
-    min-width: 200px;
-    margin-bottom: 80px;   
-}
-.stat-tab-btn{
-    width: 70px;
-    height: 30px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 400;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.stat-tab-btn:hover{
-    background-color: beige;
-    transform: scale(1.1);
-}
 .goal-settinngs{
     display: flex;
     flex-direction: column;
