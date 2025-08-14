@@ -12,7 +12,6 @@ WellNest is a beginner-friendly web application designed to help users monitor t
 - 📅 Option to track for multiple days
 - 💾 Data stored locally using `localStorage`
 - 📱 Responsive and mobile-friendly layout
-- 📈 Weekly/Monthly Statistics
 - 🎯 Goal Setting
 
 ---
